@@ -1,0 +1,24 @@
+{
+  "name": "loteriapp-server",
+  "version": "1.0.0",
+  "description": "loteriapp server side",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christopherpaulino/loteriapp-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christopherpaulino/loteriapp-server/issues"
+  },
+  "homepage": "https://github.com/christopherpaulino/loteriapp-server#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
