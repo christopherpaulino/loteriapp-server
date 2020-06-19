@@ -1,12 +1,12 @@
 const express = require('express') 
 const http = require('http')
 const bodyParser = require('body-parser')
-
+const config = require('./config/config')
 const app = express();
 
 require('dotenv').config()
 
-const port = process.env.PORT;
+const {PORT,HOST} = config;
 
  //parse para x-www-form-urlencoded
  app.use(bodyParser.urlencoded({extended:false}))
@@ -15,17 +15,12 @@ const port = process.env.PORT;
   app.use(bodyParser.json())
 // //app.use(express.static(__dirname+'/public'))
 
+app.use(require('./routes/index'))
 
-app.get('/',(req, res)=>{
-
-    let salida= {
-        nombre:"Jose",
-        apellido: "Ventura"
-    }
-    res.status(200).send(salida)
+app.listen(PORT,()=>{
+  console.log(`Servidor corriendo en ${HOST}:${PORT}`);
+  
 })
-
-app.listen(port)
 
 
 
